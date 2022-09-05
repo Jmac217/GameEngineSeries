@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RendererAPI.h"
+#include "Hazel/Renderer/RendererAPI.h"
 
 namespace Hazel {
 
@@ -17,7 +17,6 @@ namespace Hazel {
 			s_RendererAPI->SetViewport(x, y, width, height);
 		}
 
-
 		inline static void SetClearColor(const glm::vec4& color)
 		{
 			s_RendererAPI->SetClearColor(color);
@@ -33,6 +32,7 @@ namespace Hazel {
 			s_RendererAPI->DrawIndexed(vertexArray);
 		}
 	private:
-		static RendererAPI* s_RendererAPI;
+		static Scope<RendererAPI> s_RendererAPI;
 	};
+
 }
