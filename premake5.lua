@@ -8,7 +8,7 @@ workspace "Hazel"
 		"Release",
 		"Dist"
 	}
-
+	
 	flags
 	{
 		"MultiProcessorCompile"
@@ -23,12 +23,12 @@ IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
 IncludeDir["ImGui"] = "Hazel/vendor/imgui"
 IncludeDir["glm"] = "Hazel/vendor/glm"
 IncludeDir["stb_image"] = "Hazel/vendor/stb_image"
+IncludeDir["entt"] = "Hazel/vendor/entt/include"
 
 group "Dependencies"
 	include "Hazel/vendor/GLFW"
 	include "Hazel/vendor/Glad"
 	include "Hazel/vendor/imgui"
-
 group ""
 
 project "Hazel"
@@ -68,7 +68,8 @@ project "Hazel"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links 
@@ -84,8 +85,6 @@ project "Hazel"
 
 		defines
 		{
-			"HZ_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"
@@ -124,7 +123,8 @@ project "Sandbox"
 		"Hazel/vendor/spdlog/include",
 		"Hazel/src",
 		"Hazel/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -134,7 +134,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		systemversion "latest"
-
+		
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"
@@ -171,7 +171,8 @@ project "Hazelnut"
 		"Hazel/vendor/spdlog/include",
 		"Hazel/src",
 		"Hazel/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -181,7 +182,7 @@ project "Hazelnut"
 
 	filter "system:windows"
 		systemversion "latest"
-
+		
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"

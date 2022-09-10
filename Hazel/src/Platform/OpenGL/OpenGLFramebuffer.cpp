@@ -5,6 +5,8 @@
 
 namespace Hazel {
 
+	static const uint32_t s_MaxFramebufferSize = 8192;
+
 	OpenGLFramebuffer::OpenGLFramebuffer(const FramebufferSpecification& spec)
 		: m_Specification(spec)
 	{
@@ -13,14 +15,13 @@ namespace Hazel {
 
 	OpenGLFramebuffer::~OpenGLFramebuffer()
 	{
-		glDeleteBuffers(1, &m_RendererID);
-		glDeleteBuffers(1, &m_ColorAttachment);
-		glDeleteBuffers(1, &m_DepthAttachment);
+		glDeleteFramebuffers(1, &m_RendererID);
+		glDeleteTextures(1, &m_ColorAttachment);
+		glDeleteTextures(1, &m_DepthAttachment);
 	}
 
 	void OpenGLFramebuffer::Invalidate()
 	{
-
 		if (m_RendererID)
 		{
 			glDeleteFramebuffers(1, &m_RendererID);
@@ -62,6 +63,11 @@ namespace Hazel {
 
 	void OpenGLFramebuffer::Resize(uint32_t width, uint32_t height)
 	{
+		if (width == 0 || height == 0 || width > s_MaxFramebufferSize || height > s_MaxFramebufferSize)
+		{
+			HZ_CORE_WARN("Attempted to rezize framebuffer to {0}, {1}", width, height);
+			return;
+		}
 		m_Specification.Width = width;
 		m_Specification.Height = height;
 
