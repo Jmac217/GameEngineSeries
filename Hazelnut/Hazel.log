@@ -1,5 +1,10 @@
-[11:37:49] [info] HAZEL: Creating window Hazelnut (1280, 720)
-[11:37:50] [info] HAZEL: OpenGL Info:
-[11:37:50] [info] HAZEL:   Vendor: NVIDIA Corporation
-[11:37:50] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
-[11:37:50] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
+[15:45:21] [info] HAZEL: Creating window Hazelnut (1600, 900)
+[15:45:22] [info] HAZEL: OpenGL Info:
+[15:45:22] [info] HAZEL:   Vendor: NVIDIA Corporation
+[15:45:22] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
+[15:45:22] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
+[15:45:27] [trace] HAZEL: Deserializing Scene 'Untitled'
+[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
+[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
+[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
+[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square

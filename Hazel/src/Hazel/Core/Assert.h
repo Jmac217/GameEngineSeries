@@ -2,24 +2,9 @@
 
 #include "Hazel/Core/Base.h"
 #include "Hazel/Core/Log.h"
+#include <filesystem>
 
 #ifdef HZ_ENABLE_ASSERTS
-
-namespace Hazel::Assert
-{
-	// Returns the simple file name rather than full path as suggested by LovelySanta
-	constexpr const char* CurrentFileName(const char* path) {
-		const char* file = path;
-		while (*path)
-		{
-			if (*path == '/' || *path == '\\')
-				file = ++path;
-			else
-				path++;
-		}
-		return file;
-	}
-}
 
 // Alternatively we could use the same "default" message for both "WITH_MSG" and "NO_MSG" and
 // provide support for custom formatting by concatenating the formatting string instead of having the format inside the default message
