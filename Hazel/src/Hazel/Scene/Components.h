@@ -2,7 +2,20 @@
 
 #include <glm/glm.hpp>
 
+#include "Hazel/Renderer/Camera.h"
+
 namespace Hazel {
+
+	struct CameraComponent
+	{
+		Camera Camera;
+		bool Primary = true; // TODO: think about moving to Scene
+
+		CameraComponent() = default;
+		CameraComponent(const CameraComponent&) = default;
+		CameraComponent(const glm::mat4& projection)
+			: Camera(projection) {}
+	};
 
 	struct TagComponent
 	{
