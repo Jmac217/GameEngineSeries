@@ -26,10 +26,10 @@ namespace Hazel {
 		ImGui::Begin("Scene Hierarchy");
 
 		m_Context->m_Registry.each([&](auto entityID)
-		{
-			Entity entity{ entityID, m_Context.get() };
-			DrawEntityNode(entity);
-		});
+			{
+				Entity entity{ entityID, m_Context.get() };
+				DrawEntityNode(entity);
+			});
 
 		if (ImGui::IsMouseDown(0) && ImGui::IsWindowHovered())
 			m_SelectionContext = {};
@@ -51,7 +51,7 @@ namespace Hazel {
 
 		ImGuiTreeNodeFlags flags = ((m_SelectionContext == entity) ? ImGuiTreeNodeFlags_Selected : 0) | ImGuiTreeNodeFlags_OpenOnArrow;
 		bool opened = ImGui::TreeNodeEx((void*)(uint64_t)(uint32_t)entity, flags, tag.c_str());
-		
+
 		if (ImGui::IsItemClicked())
 		{
 			m_SelectionContext = entity;
@@ -66,7 +66,6 @@ namespace Hazel {
 			ImGui::TreePop();
 		}
 	}
-
 
 	void SceneHierarchyPanel::DrawComponents(Entity entity)
 	{
@@ -93,6 +92,68 @@ namespace Hazel {
 				ImGui::TreePop();
 			}
 		}
+
+		if (entity.HasComponent<CameraComponent>())
+			if (ImGui::TreeNodeEx((void*)typeid(CameraComponent).hash_code(), ImGuiTreeNodeFlags_DefaultOpen, "Camera"))
+			{
+				auto& cameraComponent = entity.GetComponent<CameraComponent>();
+				auto& camera = cameraComponent.Camera;
+
+				ImGui::Checkbox("Primary", &cameraComponent.Primary);
+
+				const char* projectionTypeStrings[] = { "Perspective", "Orthographic" };
+				const char* currentProjectionTypeString = projectionTypeStrings[(int)camera.GetProjectionType()];
+				if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
+				{
+					for (int projectionTypeIterator = 0; projectionTypeIterator < 2; projectionTypeIterator++)
+					{
+						bool isSelected = currentProjectionTypeString == projectionTypeStrings[projectionTypeIterator];
+						if (ImGui::Selectable(projectionTypeStrings[projectionTypeIterator], isSelected))
+						{
+							currentProjectionTypeString = projectionTypeStrings[projectionTypeIterator];
+							camera.SetProjectionType((SceneCamera::ProjectionType)projectionTypeIterator);
+						}
+
+						if (isSelected)
+							ImGui::SetItemDefaultFocus();
+					}
+
+					ImGui::EndCombo();
+				}
+
+				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Perspective)
+				{
+					float verticalFov = glm::degrees(camera.GetPerspectiveVerticalFOV());
+					if (ImGui::DragFloat("Vertical FOV", &verticalFov))
+						camera.SetPerspectiveVerticalFOV(glm::radians(verticalFov));
+
+					float orthoNear = camera.GetPerspectiveNearClip();
+					if (ImGui::DragFloat("Near", &orthoNear))
+						camera.SetPerspectiveNearClip(orthoNear);
+
+					float orthoFar = camera.GetPerspectiveFarClip();
+					if (ImGui::DragFloat("Far", &orthoFar))
+						camera.SetPerspectiveFarClip(orthoFar);
+				}
+
+				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Orthographic)
+				{
+					float orthoSize = camera.GetOrthographicSize();
+					if (ImGui::DragFloat("Size", &orthoSize))
+						camera.SetOrthographicSize(orthoSize);
+
+					float orthoNear = camera.GetOrthographicNearClip();
+					if (ImGui::DragFloat("Near", &orthoNear))
+						camera.SetOrthographicNearClip(orthoNear);
+
+					float orthoFar = camera.GetOrthographicFarClip();
+					if (ImGui::DragFloat("Far", &orthoFar))
+						camera.SetOrthographicFarClip(orthoFar);
+
+					ImGui::Checkbox("Fixed Aspect Ratio", &cameraComponent.FixedAspectRatio);
+				}
+				ImGui::TreePop();
+			}
+		}
 	}
 
-}
