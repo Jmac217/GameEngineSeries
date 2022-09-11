@@ -1,6 +1,6 @@
 @echo off
 pushd %~dp0\..\
-call xcopy /E /I /Y vendor\bin\premake\config\* Hazel\vendor\
-call vendor\bin\premake\premake5.exe vs2022
+call xcopy /E /I /Y vendor\premake\config\* Hazel\vendor\
+call vendor\premake\bin\premake5.exe vs2022
 popd
 pause
