@@ -1,10 +1,20 @@
-[15:45:21] [info] HAZEL: Creating window Hazelnut (1600, 900)
-[15:45:22] [info] HAZEL: OpenGL Info:
-[15:45:22] [info] HAZEL:   Vendor: NVIDIA Corporation
-[15:45:22] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
-[15:45:22] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
-[15:45:27] [trace] HAZEL: Deserializing Scene 'Untitled'
-[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
-[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
-[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
-[15:45:27] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square
+[16:15:01] [info] HAZEL: Creating window Hazelnut (1600, 900)
+[16:15:02] [info] HAZEL: OpenGL Info:
+[16:15:02] [info] HAZEL:   Vendor: NVIDIA Corporation
+[16:15:02] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
+[16:15:02] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
+[16:15:08] [trace] HAZEL: Deserializing Scene 'Untitled'
+[16:15:08] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
+[16:15:08] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
+[16:15:08] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
+[16:15:08] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square
+[16:15:18] [trace] HAZEL: Deserializing Scene 'Untitled'
+[16:15:18] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square
+[16:15:18] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
+[16:15:18] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
+[16:15:18] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
+[16:15:26] [trace] HAZEL: Deserializing Scene 'Untitled'
+[16:15:26] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
+[16:15:26] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
+[16:15:26] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
+[16:15:26] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square
