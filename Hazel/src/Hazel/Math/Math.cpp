@@ -77,4 +77,5 @@ namespace Hazel::Math {
 
 		return true;
 	}
+
 }
