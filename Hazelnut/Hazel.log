@@ -1,10 +1,10 @@
-[00:57:46] [info] HAZEL: Creating window Hazelnut (1600, 900)
-[00:57:46] [info] HAZEL: OpenGL Info:
-[00:57:46] [info] HAZEL:   Vendor: NVIDIA Corporation
-[00:57:46] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
-[00:57:46] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
-[00:57:54] [trace] HAZEL: Deserializing Scene 'Untitled'
-[00:57:54] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square
-[00:57:54] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
-[00:57:54] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
-[00:57:54] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
+[01:16:59] [info] HAZEL: Creating window Hazelnut (1600, 900)
+[01:17:00] [info] HAZEL: OpenGL Info:
+[01:17:00] [info] HAZEL:   Vendor: NVIDIA Corporation
+[01:17:00] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
+[01:17:00] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
+[01:17:04] [trace] HAZEL: Deserializing Scene 'Untitled'
+[01:17:04] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera B
+[01:17:04] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Camera A
+[01:17:04] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Red Square
+[01:17:04] [trace] HAZEL: Deserialized entity with ID = 123456789, name = Green Square
