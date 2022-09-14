@@ -1,4 +1,4 @@
-project "ImGui"
+project "yaml-cpp"
 	kind "StaticLib"
 	language "C++"
 
@@ -7,28 +7,27 @@ project "ImGui"
 
 	files
 	{
-		"imconfig.h",
-		"imgui.h",
-		"imgui.cpp",
-		"imgui_draw.cpp",
-		"imgui_internal.h",
-		"imgui_widgets.cpp",
-		"imstb_rectpack.h",
-		"imstb_textedit.h",
-		"imstb_truetype.h",
-		"imgui_demo.cpp"
+		"src/**.h",
+		"src/**.cpp",
+		
+		"include/**.h"
+	}
+
+	includedirs
+	{
+		"include"
 	}
 
 	filter "system:windows"
 		systemversion "latest"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 
 	filter "system:linux"
 		pic "On"
 		systemversion "latest"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 
 	filter "configurations:Debug"
 		runtime "Debug"
