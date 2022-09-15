@@ -27,7 +27,6 @@ namespace Hazel {
 		return entity;
 	}
 
-
 	void Scene::DestroyEntity(Entity entity)
 	{
 		m_Registry.destroy(entity);
@@ -35,16 +34,15 @@ namespace Hazel {
 
 	void Scene::OnUpdateRuntime(Timestep ts)
 	{
-
 		// Update scripts
 		{
 			m_Registry.view<NativeScriptComponent>().each([=](auto entity, auto& nsc)
 				{
+					// TODO: Move to Scene::OnScenePlay
 					if (!nsc.Instance)
 					{
 						nsc.Instance = nsc.InstantiateScript();
 						nsc.Instance->m_Entity = Entity{ entity, this };
-
 						nsc.Instance->OnCreate();
 					}
 
@@ -84,12 +82,13 @@ namespace Hazel {
 
 			Renderer2D::EndScene();
 		}
-	}
 
+	}
 
 	void Scene::OnUpdateEditor(Timestep ts, EditorCamera& camera)
 	{
 		Renderer2D::BeginScene(camera);
+
 		auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
 		for (auto entity : group)
 		{
@@ -97,6 +96,7 @@ namespace Hazel {
 
 			Renderer2D::DrawSprite(transform.GetTransform(), sprite, (int)entity);
 		}
+
 		Renderer2D::EndScene();
 	}
 
@@ -105,7 +105,7 @@ namespace Hazel {
 		m_ViewportWidth = width;
 		m_ViewportHeight = height;
 
-		// Resize non- FixedAspectRatio Cameras
+		// Resize our non-FixedAspectRatio cameras
 		auto view = m_Registry.view<CameraComponent>();
 		for (auto entity : view)
 		{
@@ -113,8 +113,8 @@ namespace Hazel {
 			if (!cameraComponent.FixedAspectRatio)
 				cameraComponent.Camera.SetViewportSize(width, height);
 		}
-	}
 
+	}
 
 	Entity Scene::GetPrimaryCameraEntity()
 	{
@@ -142,7 +142,8 @@ namespace Hazel {
 	template<>
 	void Scene::OnComponentAdded<CameraComponent>(Entity entity, CameraComponent& component)
 	{
-		component.Camera.SetViewportSize(m_ViewportWidth, m_ViewportHeight);
+		if (m_ViewportWidth > 0 && m_ViewportHeight > 0)
+			component.Camera.SetViewportSize(m_ViewportWidth, m_ViewportHeight);
 	}
 
 	template<>
@@ -159,5 +160,6 @@ namespace Hazel {
 	void Scene::OnComponentAdded<NativeScriptComponent>(Entity entity, NativeScriptComponent& component)
 	{
 	}
+
 
 }
