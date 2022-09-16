@@ -1,18 +1,23 @@
-[20:34:01] [info] HAZEL: Creating window Hazelnut (1600, 900)
-[20:34:02] [info] HAZEL: OpenGL Info:
-[20:34:02] [info] HAZEL:   Vendor: NVIDIA Corporation
-[20:34:02] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
-[20:34:02] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
-[20:34:02] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Texture.glsl
-[20:34:02] [trace] HAZEL:     1 uniform buffers
-[20:34:02] [trace] HAZEL:     0 resources
-[20:34:02] [trace] HAZEL: Uniform buffers:
-[20:34:02] [trace] HAZEL:   _46_48
-[20:34:02] [trace] HAZEL:     Size = 64
-[20:34:02] [trace] HAZEL:     Binding = 0
-[20:34:02] [trace] HAZEL:     Members = 1
-[20:34:02] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Texture.glsl
-[20:34:02] [trace] HAZEL:     0 uniform buffers
-[20:34:02] [trace] HAZEL:     1 resources
-[20:34:02] [trace] HAZEL: Uniform buffers:
-[20:34:02] [warning] HAZEL: Shader creation took 15.227202 ms
+[20:47:57] [info] HAZEL: Creating window Hazelnut (1600, 900)
+[20:47:58] [info] HAZEL: OpenGL Info:
+[20:47:58] [info] HAZEL:   Vendor: NVIDIA Corporation
+[20:47:58] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
+[20:47:58] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
+[20:47:58] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Texture.glsl
+[20:47:58] [trace] HAZEL:     1 uniform buffers
+[20:47:58] [trace] HAZEL:     0 resources
+[20:47:58] [trace] HAZEL: Uniform buffers:
+[20:47:58] [trace] HAZEL:   _46_48
+[20:47:58] [trace] HAZEL:     Size = 64
+[20:47:58] [trace] HAZEL:     Binding = 0
+[20:47:58] [trace] HAZEL:     Members = 1
+[20:47:58] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Texture.glsl
+[20:47:58] [trace] HAZEL:     0 uniform buffers
+[20:47:58] [trace] HAZEL:     1 resources
+[20:47:58] [trace] HAZEL: Uniform buffers:
+[20:47:58] [warning] HAZEL: Shader creation took 16.305403 ms
+[20:48:02] [trace] HAZEL: Deserializing Scene 'Untitled'
+[20:48:02] [trace] HAZEL: Deserialized entity with ID = 12837192831273, name = Camera B
+[20:48:02] [trace] HAZEL: Deserialized entity with ID = 12837192831273, name = Camera A
+[20:48:02] [trace] HAZEL: Deserialized entity with ID = 12837192831273, name = Red Square
+[20:48:02] [trace] HAZEL: Deserialized entity with ID = 12837192831273, name = Green Square
