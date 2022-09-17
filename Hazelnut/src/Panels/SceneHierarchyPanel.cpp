@@ -257,6 +257,15 @@ namespace Hazel {
 				}
 			}
 
+			if (!m_SelectionContext.HasComponent<CircleRendererComponent>())
+			{
+				if (ImGui::MenuItem("Circle Renderer"))
+				{
+					m_SelectionContext.AddComponent<CircleRendererComponent>();
+					ImGui::CloseCurrentPopup();
+				}
+			}
+
 			if (!m_SelectionContext.HasComponent<Rigidbody2DComponent>())
 			{
 				if (ImGui::MenuItem("Rigidbody 2D"))
@@ -281,95 +290,102 @@ namespace Hazel {
 		ImGui::PopItemWidth();
 
 		DrawComponent<TransformComponent>("Transform", entity, [](auto& component)
-			{
-				DrawVec3Control("Translation", component.Translation);
-				glm::vec3 rotation = glm::degrees(component.Rotation);
-				DrawVec3Control("Rotation", rotation);
-				component.Rotation = glm::radians(rotation);
-				DrawVec3Control("Scale", component.Scale, 1.0f);
-			});
+		{
+			DrawVec3Control("Translation", component.Translation);
+			glm::vec3 rotation = glm::degrees(component.Rotation);
+			DrawVec3Control("Rotation", rotation);
+			component.Rotation = glm::radians(rotation);
+			DrawVec3Control("Scale", component.Scale, 1.0f);
+		});
 
 		DrawComponent<CameraComponent>("Camera", entity, [](auto& component)
+		{
+			auto& camera = component.Camera;
+
+			ImGui::Checkbox("Primary", &component.Primary);
+
+			const char* projectionTypeStrings[] = { "Perspective", "Orthographic" };
+			const char* currentProjectionTypeString = projectionTypeStrings[(int)camera.GetProjectionType()];
+			if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
 			{
-				auto& camera = component.Camera;
-
-				ImGui::Checkbox("Primary", &component.Primary);
-
-				const char* projectionTypeStrings[] = { "Perspective", "Orthographic" };
-				const char* currentProjectionTypeString = projectionTypeStrings[(int)camera.GetProjectionType()];
-				if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
+				for (int i = 0; i < 2; i++)
 				{
-					for (int i = 0; i < 2; i++)
+					bool isSelected = currentProjectionTypeString == projectionTypeStrings[i];
+					if (ImGui::Selectable(projectionTypeStrings[i], isSelected))
 					{
-						bool isSelected = currentProjectionTypeString == projectionTypeStrings[i];
-						if (ImGui::Selectable(projectionTypeStrings[i], isSelected))
-						{
-							currentProjectionTypeString = projectionTypeStrings[i];
-							camera.SetProjectionType((SceneCamera::ProjectionType)i);
-						}
-
-						if (isSelected)
-							ImGui::SetItemDefaultFocus();
+						currentProjectionTypeString = projectionTypeStrings[i];
+						camera.SetProjectionType((SceneCamera::ProjectionType)i);
 					}
 
-					ImGui::EndCombo();
+					if (isSelected)
+						ImGui::SetItemDefaultFocus();
 				}
 
-				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Perspective)
-				{
-					float perspectiveVerticalFov = glm::degrees(camera.GetPerspectiveVerticalFOV());
-					if (ImGui::DragFloat("Vertical FOV", &perspectiveVerticalFov))
-						camera.SetPerspectiveVerticalFOV(glm::radians(perspectiveVerticalFov));
+				ImGui::EndCombo();
+			}
 
-					float perspectiveNear = camera.GetPerspectiveNearClip();
-					if (ImGui::DragFloat("Near", &perspectiveNear))
-						camera.SetPerspectiveNearClip(perspectiveNear);
+			if (camera.GetProjectionType() == SceneCamera::ProjectionType::Perspective)
+			{
+				float perspectiveVerticalFov = glm::degrees(camera.GetPerspectiveVerticalFOV());
+				if (ImGui::DragFloat("Vertical FOV", &perspectiveVerticalFov))
+					camera.SetPerspectiveVerticalFOV(glm::radians(perspectiveVerticalFov));
 
-					float perspectiveFar = camera.GetPerspectiveFarClip();
-					if (ImGui::DragFloat("Far", &perspectiveFar))
-						camera.SetPerspectiveFarClip(perspectiveFar);
-				}
+				float perspectiveNear = camera.GetPerspectiveNearClip();
+				if (ImGui::DragFloat("Near", &perspectiveNear))
+					camera.SetPerspectiveNearClip(perspectiveNear);
 
-				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Orthographic)
-				{
-					float orthoSize = camera.GetOrthographicSize();
-					if (ImGui::DragFloat("Size", &orthoSize))
-						camera.SetOrthographicSize(orthoSize);
+				float perspectiveFar = camera.GetPerspectiveFarClip();
+				if (ImGui::DragFloat("Far", &perspectiveFar))
+					camera.SetPerspectiveFarClip(perspectiveFar);
+			}
 
-					float orthoNear = camera.GetOrthographicNearClip();
-					if (ImGui::DragFloat("Near", &orthoNear))
-						camera.SetOrthographicNearClip(orthoNear);
+			if (camera.GetProjectionType() == SceneCamera::ProjectionType::Orthographic)
+			{
+				float orthoSize = camera.GetOrthographicSize();
+				if (ImGui::DragFloat("Size", &orthoSize))
+					camera.SetOrthographicSize(orthoSize);
 
-					float orthoFar = camera.GetOrthographicFarClip();
-					if (ImGui::DragFloat("Far", &orthoFar))
-						camera.SetOrthographicFarClip(orthoFar);
+				float orthoNear = camera.GetOrthographicNearClip();
+				if (ImGui::DragFloat("Near", &orthoNear))
+					camera.SetOrthographicNearClip(orthoNear);
 
-					ImGui::Checkbox("Fixed Aspect Ratio", &component.FixedAspectRatio);
-				}
-			});
+				float orthoFar = camera.GetOrthographicFarClip();
+				if (ImGui::DragFloat("Far", &orthoFar))
+					camera.SetOrthographicFarClip(orthoFar);
+
+				ImGui::Checkbox("Fixed Aspect Ratio", &component.FixedAspectRatio);
+			}
+		});
 
 		DrawComponent<SpriteRendererComponent>("Sprite Renderer", entity, [](auto& component)
+		{
+			ImGui::ColorEdit4("Color", glm::value_ptr(component.Color));
+
+			ImGui::Button("Texture", ImVec2(100.0f, 0.0f));
+			if (ImGui::BeginDragDropTarget())
 			{
-				ImGui::ColorEdit4("Color", glm::value_ptr(component.Color));
-
-				ImGui::Button("Texture", ImVec2(100.0f, 0.0f));
-				if (ImGui::BeginDragDropTarget())
+				if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("CONTENT_BROWSER_ITEM"))
 				{
-					if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("CONTENT_BROWSER_ITEM"))
-					{
-						const wchar_t* path = (const wchar_t*)payload->Data;
-						std::filesystem::path texturePath = std::filesystem::path(g_AssetPath) / path;
-						Ref<Texture2D> texture = Texture2D::Create(texturePath.string());
-						if (texture->IsLoaded())
-							component.Texture = texture;
-						else
-							HZ_WARN("Could not load texture {0}", texturePath.filename().string());
-					}
-					ImGui::EndDragDropTarget();
+					const wchar_t* path = (const wchar_t*)payload->Data;
+					std::filesystem::path texturePath = std::filesystem::path(g_AssetPath) / path;
+					Ref<Texture2D> texture = Texture2D::Create(texturePath.string());
+					if (texture->IsLoaded())
+						component.Texture = texture;
+					else
+						HZ_WARN("Could not load texture {0}", texturePath.filename().string());
 				}
+				ImGui::EndDragDropTarget();
+			}
 
-				ImGui::DragFloat("Tiling Factor", &component.TilingFactor, 0.1f, 0.0f, 100.0f);
-			});
+			ImGui::DragFloat("Tiling Factor", &component.TilingFactor, 0.1f, 0.0f, 100.0f);
+		});
+
+		DrawComponent<CircleRendererComponent>("Circle Renderer", entity, [](auto& component)
+		{
+				ImGui::ColorEdit4("Color", glm::value_ptr(component.Color));
+				ImGui::DragFloat("Thickness", &component.Thickness, 0.025f, 0.0f, 1.0f);
+				ImGui::DragFloat("Fade", &component.Fade, 0.00025f, 0.0f, 1.0f);
+		});
 
 		DrawComponent<Rigidbody2DComponent>("Rigidbody 2D", entity, [](auto& component)
 			{
