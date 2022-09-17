@@ -2,15 +2,15 @@ Scene: Untitled
 Entities:
   - Entity: 12837192831273
     TagComponent:
-      Tag: Floor
+      Tag: Box
     TransformComponent:
-      Translation: [0, -2.33159685, 0]
-      Rotation: [0, 0, 0]
-      Scale: [11.5855646, 0.195672706, 1]
+      Translation: [0, 3.98608017, 0]
+      Rotation: [0.000178922375, 0.000760301366, 0.233824283]
+      Scale: [0.576999128, 1.59963024, 1]
     SpriteRendererComponent:
-      Color: [0.304590344, 0.583011627, 0.247611135, 1]
+      Color: [0.254021287, 0.749975801, 0.822393835, 1]
     Rigidbody2DComponent:
-      BodyType: Static
+      BodyType: Dynamic
       FixedRotation: false
     BoxCollider2DComponent:
       Offset: [0, 0]
@@ -39,15 +39,15 @@ Entities:
       FixedAspectRatio: false
   - Entity: 12837192831273
     TagComponent:
-      Tag: Box
+      Tag: Floor
     TransformComponent:
-      Translation: [0, 3.98608017, 0]
-      Rotation: [0.000178922375, 0.000760301366, 0.233824283]
-      Scale: [0.576999128, 1.59963024, 1]
+      Translation: [0, -2.33159685, 0]
+      Rotation: [0, 0, 0]
+      Scale: [11.5855646, 0.195672706, 1]
     SpriteRendererComponent:
-      Color: [0.254021287, 0.749975801, 0.822393835, 1]
+      Color: [0.304590344, 0.583011627, 0.247611135, 1]
     Rigidbody2DComponent:
-      BodyType: Dynamic
+      BodyType: Static
       FixedRotation: false
     BoxCollider2DComponent:
       Offset: [0, 0]
