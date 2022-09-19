@@ -1,46 +1,90 @@
-[09:38:45] [info] HAZEL: Creating window Hazelnut (1600, 900)
-[09:38:46] [info] HAZEL: OpenGL Info:
-[09:38:46] [info] HAZEL:   Vendor: NVIDIA Corporation
-[09:38:46] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
-[09:38:46] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
-[09:38:46] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Renderer2D_Quad.glsl
-[09:38:46] [trace] HAZEL:     1 uniform buffers
-[09:38:46] [trace] HAZEL:     0 resources
-[09:38:46] [trace] HAZEL: Uniform buffers:
-[09:38:46] [trace] HAZEL:   _46_48
-[09:38:46] [trace] HAZEL:     Size = 64
-[09:38:46] [trace] HAZEL:     Binding = 0
-[09:38:46] [trace] HAZEL:     Members = 1
-[09:38:46] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Renderer2D_Quad.glsl
-[09:38:46] [trace] HAZEL:     0 uniform buffers
-[09:38:46] [trace] HAZEL:     1 resources
-[09:38:46] [trace] HAZEL: Uniform buffers:
-[09:38:46] [warning] HAZEL: Shader creation took 27.342005 ms
-[09:38:46] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Renderer2D_Circle.glsl
-[09:38:46] [trace] HAZEL:     1 uniform buffers
-[09:38:46] [trace] HAZEL:     0 resources
-[09:38:46] [trace] HAZEL: Uniform buffers:
-[09:38:46] [trace] HAZEL:   _47_49
-[09:38:46] [trace] HAZEL:     Size = 64
-[09:38:46] [trace] HAZEL:     Binding = 0
-[09:38:46] [trace] HAZEL:     Members = 1
-[09:38:46] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Renderer2D_Circle.glsl
-[09:38:46] [trace] HAZEL:     0 uniform buffers
-[09:38:46] [trace] HAZEL:     0 resources
-[09:38:46] [trace] HAZEL: Uniform buffers:
-[09:38:46] [warning] HAZEL: Shader creation took 31.990103 ms
-[09:38:46] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Renderer2D_Line.glsl
-[09:38:46] [trace] HAZEL:     1 uniform buffers
-[09:38:46] [trace] HAZEL:     0 resources
-[09:38:46] [trace] HAZEL: Uniform buffers:
-[09:38:46] [trace] HAZEL:   _30_32
-[09:38:46] [trace] HAZEL:     Size = 64
-[09:38:46] [trace] HAZEL:     Binding = 0
-[09:38:46] [trace] HAZEL:     Members = 1
-[09:38:46] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Renderer2D_Line.glsl
-[09:38:46] [trace] HAZEL:     0 uniform buffers
-[09:38:46] [trace] HAZEL:     0 resources
-[09:38:46] [trace] HAZEL: Uniform buffers:
-[09:38:46] [warning] HAZEL: Shader creation took 26.065205 ms
-[09:38:46] [trace] HAZEL: .<Module>
-[09:38:46] [trace] HAZEL: Hazel.Main
+[20:35:53] [info] HAZEL: Creating window Hazelnut (1600, 900)
+[20:35:53] [info] HAZEL: OpenGL Info:
+[20:35:53] [info] HAZEL:   Vendor: NVIDIA Corporation
+[20:35:53] [info] HAZEL:   Renderer: NVIDIA GeForce GTX 760/PCIe/SSE2
+[20:35:53] [info] HAZEL:   Version: 4.6.0 NVIDIA 473.47
+[20:35:53] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Renderer2D_Quad.glsl
+[20:35:53] [trace] HAZEL:     1 uniform buffers
+[20:35:53] [trace] HAZEL:     0 resources
+[20:35:53] [trace] HAZEL: Uniform buffers:
+[20:35:53] [trace] HAZEL:   _46_48
+[20:35:53] [trace] HAZEL:     Size = 64
+[20:35:53] [trace] HAZEL:     Binding = 0
+[20:35:53] [trace] HAZEL:     Members = 1
+[20:35:53] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Renderer2D_Quad.glsl
+[20:35:53] [trace] HAZEL:     0 uniform buffers
+[20:35:53] [trace] HAZEL:     1 resources
+[20:35:53] [trace] HAZEL: Uniform buffers:
+[20:35:53] [warning] HAZEL: Shader creation took 37.958904 ms
+[20:35:53] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Renderer2D_Circle.glsl
+[20:35:53] [trace] HAZEL:     1 uniform buffers
+[20:35:53] [trace] HAZEL:     0 resources
+[20:35:53] [trace] HAZEL: Uniform buffers:
+[20:35:53] [trace] HAZEL:   _47_49
+[20:35:53] [trace] HAZEL:     Size = 64
+[20:35:53] [trace] HAZEL:     Binding = 0
+[20:35:53] [trace] HAZEL:     Members = 1
+[20:35:53] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Renderer2D_Circle.glsl
+[20:35:53] [trace] HAZEL:     0 uniform buffers
+[20:35:53] [trace] HAZEL:     0 resources
+[20:35:53] [trace] HAZEL: Uniform buffers:
+[20:35:53] [warning] HAZEL: Shader creation took 13.801002 ms
+[20:35:53] [trace] HAZEL: OpenGLShader::Reflect - GL_VERTEX_SHADER assets/shaders/Renderer2D_Line.glsl
+[20:35:53] [trace] HAZEL:     1 uniform buffers
+[20:35:53] [trace] HAZEL:     0 resources
+[20:35:53] [trace] HAZEL: Uniform buffers:
+[20:35:53] [trace] HAZEL:   _30_32
+[20:35:53] [trace] HAZEL:     Size = 64
+[20:35:53] [trace] HAZEL:     Binding = 0
+[20:35:53] [trace] HAZEL:     Members = 1
+[20:35:53] [trace] HAZEL: OpenGLShader::Reflect - GL_FRAGMENT_SHADER assets/shaders/Renderer2D_Line.glsl
+[20:35:53] [trace] HAZEL:     0 uniform buffers
+[20:35:53] [trace] HAZEL:     0 resources
+[20:35:53] [trace] HAZEL: Uniform buffers:
+[20:35:53] [warning] HAZEL: Shader creation took 16.991602 ms
+[20:35:53] [warning] HAZEL: Value: vec3(5.000000, 2.500000, 1.000000)
+[20:35:53] [warning] HAZEL: Value: vec3(5.000000, 2.500000, 1.000000)
+[20:35:57] [trace] HAZEL: Deserializing scene 'Untitled'
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 16302458589036128976, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 3384016366660009260, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 10308141364436604111, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 16033481399278032276, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 254743357576212666, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 5369706914909084859, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 13736962071118031748, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 3923212922780553580, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 15828238197166797775, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 12299488073407288520, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 7451679984207105275, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 5403080424617473708, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 15869651347495788777, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 7481233399128827535, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 16035780161777666734, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 13481716341834005742, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 9276632683349857195, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 8667058765432225952, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 4930792709938966391, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 4958899245801335745, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 16597698812666432975, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 12520109885280366957, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 7922434141454750714, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 11622997345407102537, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 5893058008869389536, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 6065404488040046302, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 9794743859059204221, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 11575214892840879212, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 6435744501577464974, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 16672940118998907085, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 4793924497264767156, name = Camera
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 15045535320033348975, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 4664972546178876413, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 8572832169735946016, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 5999733050145526634, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 13868918165658548879, name = Floor
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 5026531581119291356, name = Sprite
+[20:35:57] [trace] HAZEL: Deserialized entity with ID = 12414767693770145852, name = Sprite
+[20:36:24] [trace] HAZEL: Deserializing scene 'Untitled'
+[20:36:24] [trace] HAZEL: Deserialized entity with ID = 3263328598497060330, name = Camera B
+[20:36:24] [trace] HAZEL: Deserialized entity with ID = 3503638098362915787, name = Camera A
+[20:36:24] [trace] HAZEL: Deserialized entity with ID = 17154294327283940743, name = Cherno Square
+[20:36:24] [trace] HAZEL: Deserialized entity with ID = 6645248621277955267, name = CheckerboardBG
